@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
 
             
             OleDbConnection conn = new OleDbConnection();
-            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=H:\db_congrat.accdb";
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
             conn.Open();
 
             OleDbCommand cmd2 = new OleDbCommand("SELECT Congratulatoin.CongrText FROM Holiday INNER JOIN Congratulatoin ON Holiday.HolID = Congratulatoin.HolID WHERE (((Holiday.HolName)='" + holiday + "'))", conn);
@@ -55,10 +55,10 @@ namespace WindowsFormsApplication1
 
             for (int i = 0; i < N; i++)
             {
-                System.IO.File.Delete(@"H:\message.txt");
-                System.IO.File.AppendAllText(@"H:\message.txt", mails[i]+"\n");
-                System.IO.File.AppendAllText(@"H:\message.txt", holiday + " - поздравляю!\n");
-                System.IO.File.AppendAllText(@"H:\message.txt", texts[i]);
+                System.IO.File.Delete(@"message.txt");
+                System.IO.File.AppendAllText(@"message.txt", mails[i]+"\n");
+                System.IO.File.AppendAllText(@"message.txt", holiday + " - поздравляю!\n");
+                System.IO.File.AppendAllText(@"message.txt", texts[i]);
 
                 Send test = new Send();
                 test.CreateLetter();

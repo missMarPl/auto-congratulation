@@ -47,9 +47,6 @@
             // list_listBox
             // 
             this.list_listBox.FormattingEnabled = true;
-            this.list_listBox.Items.AddRange(new object[] {
-            "Иванов Иван Иванович",
-            "Андреев Андрей Андреевич"});
             this.list_listBox.Location = new System.Drawing.Point(29, 31);
             this.list_listBox.Name = "list_listBox";
             this.list_listBox.ScrollAlwaysVisible = true;
@@ -74,6 +71,7 @@
             this.list_delete_button.TabIndex = 3;
             this.list_delete_button.Text = "Удалить";
             this.list_delete_button.UseVisualStyleBackColor = true;
+            this.list_delete_button.Click += new System.EventHandler(this.delete_Click);
             // 
             // Form_List
             // 
