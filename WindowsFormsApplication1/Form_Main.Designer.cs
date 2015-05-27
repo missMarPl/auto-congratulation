@@ -44,8 +44,9 @@
             this.main_checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.main_checkAll_button = new System.Windows.Forms.Button();
             this.main_dropData_button = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.main_search_button = new System.Windows.Forms.Button();
             this.main_send_button = new System.Windows.Forms.Button();
+            this.main_refresh_button = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,20 +73,20 @@
             this.добавитьToolStripMenuItem,
             this.изменитьToolStripMenuItem});
             this.main_contacts_menuItem.Name = "main_contacts_menuItem";
-            this.main_contacts_menuItem.Size = new System.Drawing.Size(70, 20);
+            this.main_contacts_menuItem.Size = new System.Drawing.Size(69, 20);
             this.main_contacts_menuItem.Text = "контакты";
             // 
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.добавитьToolStripMenuItem.Text = "добавить";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.изменитьToolStripMenuItem.Text = "изменить";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
             // 
@@ -95,20 +96,20 @@
             this.рекомендованныеПодравленияToolStripMenuItem,
             this.настройкиПочтыToolStripMenuItem});
             this.main_congratulate_menuItem.Name = "main_congratulate_menuItem";
-            this.main_congratulate_menuItem.Size = new System.Drawing.Size(54, 20);
+            this.main_congratulate_menuItem.Size = new System.Drawing.Size(49, 20);
             this.main_congratulate_menuItem.Text = "опции";
             // 
             // рекомендованныеПодравленияToolStripMenuItem
             // 
             this.рекомендованныеПодравленияToolStripMenuItem.Name = "рекомендованныеПодравленияToolStripMenuItem";
-            this.рекомендованныеПодравленияToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.рекомендованныеПодравленияToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.рекомендованныеПодравленияToolStripMenuItem.Text = "рекомендованные подравления";
             this.рекомендованныеПодравленияToolStripMenuItem.Click += new System.EventHandler(this.рекомендованныеПодравленияToolStripMenuItem_Click);
             // 
             // настройкиПочтыToolStripMenuItem
             // 
             this.настройкиПочтыToolStripMenuItem.Name = "настройкиПочтыToolStripMenuItem";
-            this.настройкиПочтыToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.настройкиПочтыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.настройкиПочтыToolStripMenuItem.Text = "настройки почты";
             this.настройкиПочтыToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
             // 
@@ -175,15 +176,15 @@
             this.main_dropData_button.Visible = false;
             this.main_dropData_button.Click += new System.EventHandler(this.dropData_button_Click);
             // 
-            // button3
+            // main_search_button
             // 
-            this.button3.Location = new System.Drawing.Point(581, 316);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 32);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "поиск";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.main_search_button.Location = new System.Drawing.Point(581, 316);
+            this.main_search_button.Name = "main_search_button";
+            this.main_search_button.Size = new System.Drawing.Size(129, 32);
+            this.main_search_button.TabIndex = 8;
+            this.main_search_button.Text = "поиск";
+            this.main_search_button.UseVisualStyleBackColor = true;
+            this.main_search_button.Click += new System.EventHandler(this.main_search_button_Click);
             // 
             // main_send_button
             // 
@@ -195,14 +196,25 @@
             this.main_send_button.UseVisualStyleBackColor = true;
             this.main_send_button.Click += new System.EventHandler(this.main_send_button_Click);
             // 
+            // main_refresh_button
+            // 
+            this.main_refresh_button.Location = new System.Drawing.Point(581, 373);
+            this.main_refresh_button.Name = "main_refresh_button";
+            this.main_refresh_button.Size = new System.Drawing.Size(129, 33);
+            this.main_refresh_button.TabIndex = 10;
+            this.main_refresh_button.Text = "обновить";
+            this.main_refresh_button.UseVisualStyleBackColor = true;
+            this.main_refresh_button.Click += new System.EventHandler(this.main_refresh_button_Click);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 550);
+            this.Controls.Add(this.main_refresh_button);
             this.Controls.Add(this.main_dropData_button);
             this.Controls.Add(this.main_send_button);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.main_search_button);
             this.Controls.Add(this.main_checkAll_button);
             this.Controls.Add(this.main_checkedListBox);
             this.Controls.Add(this.label2);
@@ -213,6 +225,7 @@
             this.Name = "Form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Настроить поздравления";
+            this.Activated += new System.EventHandler(this.Form_Main_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -238,8 +251,9 @@
         private System.Windows.Forms.CheckedListBox main_checkedListBox;
         private System.Windows.Forms.Button main_checkAll_button;
         private System.Windows.Forms.Button main_dropData_button;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button main_search_button;
         private System.Windows.Forms.Button main_send_button;
+        private System.Windows.Forms.Button main_refresh_button;
     }
 }
 

@@ -38,6 +38,7 @@
             this.search_sex_textBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+
             // 
             // search_button
             // 
@@ -47,7 +48,7 @@
             this.search_button.TabIndex = 0;
             this.search_button.Text = "Искать";
             this.search_button.UseVisualStyleBackColor = true;
-            this.search_button.Click += new System.EventHandler(this.button1_Click);
+            this.search_button.Click += new System.EventHandler(this.search_button_Click);
             // 
             // label1
             // 

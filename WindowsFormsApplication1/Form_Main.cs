@@ -12,6 +12,7 @@ namespace WindowsFormsApplication1
 {
     public partial class Form_Main : Form
     {
+        public string minf1, minf2, minf3, minf4;
 
         string  currentDate;
         public void format_date()
@@ -98,7 +99,43 @@ namespace WindowsFormsApplication1
             conn.Close();        
     }
 
-    
+
+    //поисковые дела    
+    private void main_search_button_Click(object sender, EventArgs e)
+    {
+        Form_Search form = new Form_Search();
+        form.Owner = this;
+        form.Location = new Point(200, 300);
+        form.Show();
+
+    }
+
+    //поисковые дела
+    private void main_refresh_button_Click(object sender, EventArgs e)
+    {
+        main_checkedListBox.Items.Clear();
+        OleDbConnection conn = new OleDbConnection();
+        //устанавливаем строку подключения для данного объекта-подключения
+        conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
+        conn.Open();
+
+        OleDbCommand cmd = conn.CreateCommand();
+        cmd.CommandText = "SELECT FrName FROM Friend WHERE (FrName ='" + minf1 + "') OR (Birthday='" + minf2 + "') OR (Job='" + minf3 + "') OR (Sex='" + minf4 + "')";
+
+        //cmd.CommandText = "SELECT FrName FROM Friend WHERE (FrName='Бродский')";
+
+        OleDbDataReader dr = cmd.ExecuteReader();
+        //метод Read() считывает данные строка за строкой
+        while (dr.Read())
+        {
+            //в данной строке мы выбираем данные хранящиеся в столбце мое_поле
+            string str = dr.GetString(dr.GetOrdinal("FrName"));
+            //записываем данные в коллекцию хранящую пункты в листбокс
+            main_checkedListBox.Items.Add(str);
+        }
+        //main_checkedListBox.Items.Add(minf1);
+        conn.Close();
+    }
 		
         private void dropData_button_Click(object sender, EventArgs e) //сбросить
         {
@@ -116,13 +153,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form_Search form = new Form_Search();
-            form.Location = new Point(200, 300);
-            form.Show();
-
-        }
+  
 
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -190,7 +221,10 @@ namespace WindowsFormsApplication1
             
         }
 
-    
+        private void Form_Main_Activated(object sender, EventArgs e)
+        {
+
+        }
 
         
     }

@@ -64,6 +64,8 @@ namespace WindowsFormsApplication1
                 test.CreateLetter();
                
             }
+            Ok_Dial win = new Ok_Dial();
+
         }
     }
 }

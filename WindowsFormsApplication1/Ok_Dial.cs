@@ -9,13 +9,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Err_Dial : Form
+    public partial class Ok_Dial : Form
     {
-        public Err_Dial(Exception e)
+        public Ok_Dial()
         {
             InitializeComponent();
-            label_err.Text = e.Message;
-                
         }
 
         private void button1_Click(object sender, EventArgs e)
