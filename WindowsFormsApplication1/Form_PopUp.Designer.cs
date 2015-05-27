@@ -60,9 +60,8 @@
             this.popUp_todaysholiday_label.AutoSize = true;
             this.popUp_todaysholiday_label.Location = new System.Drawing.Point(75, 31);
             this.popUp_todaysholiday_label.Name = "popUp_todaysholiday_label";
-            this.popUp_todaysholiday_label.Size = new System.Drawing.Size(35, 13);
+            this.popUp_todaysholiday_label.Size = new System.Drawing.Size(0, 13);
             this.popUp_todaysholiday_label.TabIndex = 2;
-            this.popUp_todaysholiday_label.Text = "label3";
             // 
             // born_today
             // 

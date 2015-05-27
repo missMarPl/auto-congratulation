@@ -36,6 +36,7 @@
             this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.main_congratulate_menuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.рекомендованныеПодравленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиПочтыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.main_exit_menuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.main_comboBox = new System.Windows.Forms.ComboBox();
@@ -71,37 +72,45 @@
             this.добавитьToolStripMenuItem,
             this.изменитьToolStripMenuItem});
             this.main_contacts_menuItem.Name = "main_contacts_menuItem";
-            this.main_contacts_menuItem.Size = new System.Drawing.Size(69, 20);
+            this.main_contacts_menuItem.Size = new System.Drawing.Size(70, 20);
             this.main_contacts_menuItem.Text = "контакты";
             // 
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.добавитьToolStripMenuItem.Text = "добавить";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.изменитьToolStripMenuItem.Text = "изменить";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
             // 
             // main_congratulate_menuItem
             // 
             this.main_congratulate_menuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.рекомендованныеПодравленияToolStripMenuItem});
+            this.рекомендованныеПодравленияToolStripMenuItem,
+            this.настройкиПочтыToolStripMenuItem});
             this.main_congratulate_menuItem.Name = "main_congratulate_menuItem";
-            this.main_congratulate_menuItem.Size = new System.Drawing.Size(79, 20);
-            this.main_congratulate_menuItem.Text = "поздравить";
+            this.main_congratulate_menuItem.Size = new System.Drawing.Size(54, 20);
+            this.main_congratulate_menuItem.Text = "опции";
             // 
             // рекомендованныеПодравленияToolStripMenuItem
             // 
             this.рекомендованныеПодравленияToolStripMenuItem.Name = "рекомендованныеПодравленияToolStripMenuItem";
-            this.рекомендованныеПодравленияToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.рекомендованныеПодравленияToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.рекомендованныеПодравленияToolStripMenuItem.Text = "рекомендованные подравления";
             this.рекомендованныеПодравленияToolStripMenuItem.Click += new System.EventHandler(this.рекомендованныеПодравленияToolStripMenuItem_Click);
+            // 
+            // настройкиПочтыToolStripMenuItem
+            // 
+            this.настройкиПочтыToolStripMenuItem.Name = "настройкиПочтыToolStripMenuItem";
+            this.настройкиПочтыToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.настройкиПочтыToolStripMenuItem.Text = "настройки почты";
+            this.настройкиПочтыToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
             // 
             // main_exit_menuItem
             // 
@@ -121,11 +130,11 @@
             // 
             // main_comboBox
             // 
-            this.main_comboBox.FormattingEnabled = true;
             this.main_comboBox.Location = new System.Drawing.Point(34, 86);
             this.main_comboBox.Name = "main_comboBox";
             this.main_comboBox.Size = new System.Drawing.Size(324, 21);
             this.main_comboBox.TabIndex = 3;
+            this.main_comboBox.SelectedIndexChanged += new System.EventHandler(this.main_comboBox_SelectionChanged);
             // 
             // label2
             // 
@@ -139,9 +148,6 @@
             // main_checkedListBox
             // 
             this.main_checkedListBox.FormattingEnabled = true;
-            this.main_checkedListBox.Items.AddRange(new object[] {
-            "Иванов Иван Иванович",
-            "Андреев Андрей Андреевич"});
             this.main_checkedListBox.Location = new System.Drawing.Point(34, 184);
             this.main_checkedListBox.Name = "main_checkedListBox";
             this.main_checkedListBox.ScrollAlwaysVisible = true;
@@ -187,6 +193,7 @@
             this.main_send_button.TabIndex = 9;
             this.main_send_button.Text = "ОТПРАВИТЬ";
             this.main_send_button.UseVisualStyleBackColor = true;
+            this.main_send_button.Click += new System.EventHandler(this.main_send_button_Click);
             // 
             // Form_Main
             // 
@@ -223,6 +230,7 @@
         private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem main_congratulate_menuItem;
         private System.Windows.Forms.ToolStripMenuItem рекомендованныеПодравленияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem настройкиПочтыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem main_exit_menuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox main_comboBox;
