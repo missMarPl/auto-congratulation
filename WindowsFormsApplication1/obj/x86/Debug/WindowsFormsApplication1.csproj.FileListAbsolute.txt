@@ -24,3 +24,33 @@ H:\конструирование по\WindowsFormsApplication1_1\WindowsFormsAp
 H:\конструирование по\WindowsFormsApplication1_1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_PopUp.resources
 H:\конструирование по\WindowsFormsApplication1_1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
 H:\конструирование по\WindowsFormsApplication1_1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_Main.resources
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_Search.resources
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_Add.resources
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_List.resources
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_Change.resources
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_PopUp.resources
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\миэт\untz_untz_untz_baby\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.MailSettings.resources
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+H:\untz_untz_2904\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+H:\untz_untz_2904\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_Main.resources
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_Search.resources
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_Add.resources
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_List.resources
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_Change.resources
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form_PopUp.resources
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.MailSettings.resources
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+H:\untz_untz_2904\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Err_Dial.resources
