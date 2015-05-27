@@ -71,6 +71,7 @@
             this.list_delete_button.TabIndex = 3;
             this.list_delete_button.Text = "Удалить";
             this.list_delete_button.UseVisualStyleBackColor = true;
+            this.list_delete_button.Click += new System.EventHandler(this.delete_Click);
             // 
             // Form_List
             // 

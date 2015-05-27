@@ -15,6 +15,11 @@ namespace WindowsFormsApplication1
         public Form_List()
         {
             InitializeComponent();
+            fillList();
+        }
+
+        private void fillList() {
+            list_listBox.Items.Clear();
             OleDbConnection conn = new OleDbConnection();
             //устанавливаем строку подключения для данного объекта-подключения
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
@@ -50,6 +55,17 @@ namespace WindowsFormsApplication1
             Form_Change form = new Form_Change(list_listBox.SelectedItem.ToString());
             //form.Location = new Point(200, 300);
             form.Show();
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            OleDbConnection conn = new OleDbConnection();
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
+            OleDbCommand cmd = new OleDbCommand("DELETE FROM Friend WHERE FrName='"+list_listBox.SelectedItem.ToString()+"'", conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            fillList();
         }
     }
 }

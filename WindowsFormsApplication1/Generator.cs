@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
 
             
             OleDbConnection conn = new OleDbConnection();
-            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=H:/db_congrat.accdb";
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
             conn.Open();
 
             OleDbCommand cmd2 = new OleDbCommand("SELECT Congratulatoin.CongrText FROM Holiday INNER JOIN Congratulatoin ON Holiday.HolID = Congratulatoin.HolID WHERE (((Holiday.HolName)='" + holiday + "'))", conn);
@@ -64,6 +64,8 @@ namespace WindowsFormsApplication1
                 test.CreateLetter();
                
             }
+            Ok_Dial win = new Ok_Dial();
+
         }
     }
 }

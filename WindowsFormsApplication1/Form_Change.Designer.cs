@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
             this.change_sex_textBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.change_job_textBox = new System.Windows.Forms.TextBox();
@@ -40,17 +39,7 @@
             this.change_button = new System.Windows.Forms.Button();
             this.change_mail_textBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.aq_listBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 164);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Знакомства";
             // 
             // change_sex_textBox
             // 
@@ -118,7 +107,7 @@
             // 
             // change_button
             // 
-            this.change_button.Location = new System.Drawing.Point(87, 249);
+            this.change_button.Location = new System.Drawing.Point(87, 173);
             this.change_button.Name = "change_button";
             this.change_button.Size = new System.Drawing.Size(123, 53);
             this.change_button.TabIndex = 21;
@@ -142,21 +131,11 @@
             this.label6.TabIndex = 30;
             this.label6.Text = "E-mail";
             // 
-            // aq_listBox
-            // 
-            this.aq_listBox.FormattingEnabled = true;
-            this.aq_listBox.Location = new System.Drawing.Point(87, 164);
-            this.aq_listBox.Name = "aq_listBox";
-            this.aq_listBox.Size = new System.Drawing.Size(193, 69);
-            this.aq_listBox.TabIndex = 33;
-            // 
             // Form_Change
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 315);
-            this.Controls.Add(this.aq_listBox);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(292, 240);
             this.Controls.Add(this.change_mail_textBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.change_sex_textBox);
@@ -178,7 +157,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox change_sex_textBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox change_job_textBox;
@@ -190,7 +168,6 @@
         private System.Windows.Forms.Button change_button;
         private System.Windows.Forms.TextBox change_mail_textBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListBox aq_listBox;
 
     }
 }

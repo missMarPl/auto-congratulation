@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
 
         public Form_Search()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         private void search_button_Click(object sender, EventArgs e)
@@ -32,6 +32,6 @@ namespace WindowsFormsApplication1
             main.minf4 = search_sex_textBox.Text;
 
             Close();
-       }
+        }
     }
 }

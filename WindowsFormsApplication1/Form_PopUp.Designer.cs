@@ -35,6 +35,7 @@
             this.popUp_borntoday_list = new System.Windows.Forms.ListBox();
             this.popUp_sendToEveryone_button = new System.Windows.Forms.Button();
             this.popUp_openMain_button = new System.Windows.Forms.Button();
+            this.popUp_today_list = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // date_label
@@ -101,12 +102,23 @@
             this.popUp_openMain_button.UseVisualStyleBackColor = true;
             this.popUp_openMain_button.Click += new System.EventHandler(this.openMain_button_Click);
             // 
+            // popUp_today_list
+            // 
+            this.popUp_today_list.BackColor = System.Drawing.SystemColors.Menu;
+            this.popUp_today_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.popUp_today_list.FormattingEnabled = true;
+            this.popUp_today_list.Location = new System.Drawing.Point(90, 25);
+            this.popUp_today_list.Name = "popUp_today_list";
+            this.popUp_today_list.Size = new System.Drawing.Size(201, 26);
+            this.popUp_today_list.TabIndex = 7;
+            // 
             // Form_PopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(308, 235);
+            this.Controls.Add(this.popUp_today_list);
             this.Controls.Add(this.popUp_openMain_button);
             this.Controls.Add(this.popUp_sendToEveryone_button);
             this.Controls.Add(this.popUp_borntoday_list);
@@ -134,5 +146,6 @@
         private System.Windows.Forms.ListBox popUp_borntoday_list;
         private System.Windows.Forms.Button popUp_sendToEveryone_button;
         private System.Windows.Forms.Button popUp_openMain_button;
+        private System.Windows.Forms.ListBox popUp_today_list;
     }
 }

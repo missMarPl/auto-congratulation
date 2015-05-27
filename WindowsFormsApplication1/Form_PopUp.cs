@@ -18,10 +18,11 @@ namespace WindowsFormsApplication1
             date_label.Text = DateTime.Now.ToString("dd MMMM yyyy");;
 
             popUp_borntoday_list.Items.Clear();
+            popUp_today_list.Items.Clear();
 
             OleDbConnection conn = new OleDbConnection();
             //устанавливаем строку подключения для данного объекта-подключения
-            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=H:/db_congrat.accdb";
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
             //создаем команду
             //передаем sql-запрос команде
             OleDbCommand cmd = new OleDbCommand("SELECT FrName FROM Friend WHERE Birthday LIKE '" + DateTime.Now.Date.ToString().Substring(0, 5) + "%'", conn);
@@ -48,7 +49,7 @@ namespace WindowsFormsApplication1
                 //в данной строке мы выбираем данные хранящиеся в столбце мое_поле
                 string str = dr2.GetString(dr2.GetOrdinal("HolName"));
                 //записываем данные в label списка праздников
-                popUp_todaysholiday_label.Text = popUp_todaysholiday_label.Text + " " + str;
+                popUp_today_list.Items.Add(str);
             }
             //закрываем объект чтения данных и объект подключения
             dr2.Close();

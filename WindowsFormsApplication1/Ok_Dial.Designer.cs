@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Err_Dial 
+    partial class Ok_Dial 
     {
         /// <summary>
         /// Required designer variable.
@@ -47,20 +47,20 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Ну ок... =(";
+            this.button1.Text = "Спасибо!";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label_err
             // 
             this.label_err.AutoSize = true;
-            this.label_err.Location = new System.Drawing.Point(12, 9);
+            this.label_err.Location = new System.Drawing.Point(37, 28);
             this.label_err.Name = "label_err";
-            this.label_err.Size = new System.Drawing.Size(33, 13);
+            this.label_err.Size = new System.Drawing.Size(142, 13);
             this.label_err.TabIndex = 2;
-            this.label_err.Text = "упс...";
+            this.label_err.Text = "Я всех поздравил, хозяин!";
             // 
-            // Err_Dial
+            // Ok_Dial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,8 +68,8 @@
             this.Controls.Add(this.label_err);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "Err_Dial";
-            this.Text = "Err_Dial";
+            this.Name = "Ok_Dial";
+            this.Text = "Успех!";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -27,11 +27,11 @@ namespace WindowsFormsApplication1
            // checkedListBox1.SetItemChecked(1, true);
            // checkedListBox1.GetItemChecked(1);
             format_date();
-		    main_comboBox.Items.Clear();
+		   main_comboBox.Items.Clear();
 
 		    OleDbConnection conn = new OleDbConnection();
             //устанавливаем строку подключения для данного объекта-подключения
-            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=H:/db_congrat.accdb";
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
             //создаем команду
             //передаем sql-запрос команде
             OleDbCommand cmd = new OleDbCommand("SELECT HolName FROM Holiday WHERE HolDate='"+currentDate+"'",conn);
@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
                 //в данной строке мы выбираем данные хранящиеся в столбце мое_поле
                 string str = dr.GetString(dr.GetOrdinal("HolName"));
                 //записываем данные в коллекцию хранящую пункты в комбобокс
-                main_comboBox.Items.Add(str);
+               main_comboBox.Items.Add(str);
             }
             //закрываем объект чтения данных и объект подключения
             dr.Close();
@@ -62,23 +62,26 @@ namespace WindowsFormsApplication1
 
 		   OleDbConnection conn = new OleDbConnection();
             //устанавливаем строку подключения для данного объекта-подключения
-            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=H:/db_congrat.accdb";
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
             //создаем команду
             OleDbCommand cmd = conn.CreateCommand();
 			//передаем sql-запрос команде
 
-            switch (comboItem)
-            {
-                case "День рождения":
-                    cmd.CommandText = "SELECT FrName FROM Friend WHERE Birthday LIKE '" + currentDate + "%'";
-                    break;
-                case "8 марта":
-                    cmd.CommandText = "SELECT FrName FROM Friend WHERE Sex='ж'";
-                    break;
-                default:
-                    cmd.CommandText = "SELECT FrName FROM Friend";
-                    break;
-            }
+					switch (comboItem)
+{
+    case "День рождения":
+        cmd.CommandText="SELECT FrName FROM Friend WHERE Birthday LIKE '"+currentDate+"%'";
+        break;
+    case "День Защитника Отечества":
+        cmd.CommandText = "SELECT FrName FROM Friend WHERE Sex='м'";
+        break;
+    case "Международный женский день":
+        cmd.CommandText = "SELECT FrName FROM Friend WHERE Sex='ж'";
+        break;
+    default:
+        cmd.CommandText = "SELECT FrName FROM Friend";
+        break;
+}
             //открываем подключение
             conn.Open();
             //выполняем команду и создаем объект чтения данных
@@ -96,41 +99,43 @@ namespace WindowsFormsApplication1
             conn.Close();        
     }
 
-//поисковые дела    
-        private void main_search_button_Click(object sender, EventArgs e)
+
+    //поисковые дела    
+    private void main_search_button_Click(object sender, EventArgs e)
+    {
+        Form_Search form = new Form_Search();
+        form.Owner = this;
+        form.Location = new Point(200, 300);
+        form.Show();
+
+    }
+
+    //поисковые дела
+    private void main_refresh_button_Click(object sender, EventArgs e)
+    {
+        main_checkedListBox.Items.Clear();
+        OleDbConnection conn = new OleDbConnection();
+        //устанавливаем строку подключения для данного объекта-подключения
+        conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
+        conn.Open();
+
+        OleDbCommand cmd = conn.CreateCommand();
+        cmd.CommandText = "SELECT FrName FROM Friend WHERE (FrName ='" + minf1 + "') OR (Birthday='" + minf2 + "') OR (Job='" + minf3 + "') OR (Sex='" + minf4 + "')";
+
+        //cmd.CommandText = "SELECT FrName FROM Friend WHERE (FrName='Бродский')";
+
+        OleDbDataReader dr = cmd.ExecuteReader();
+        //метод Read() считывает данные строка за строкой
+        while (dr.Read())
         {
-            Form_Search form = new Form_Search();
-            form.Owner = this;
-            form.Location = new Point(200, 300);
-            form.Show();
-
+            //в данной строке мы выбираем данные хранящиеся в столбце мое_поле
+            string str = dr.GetString(dr.GetOrdinal("FrName"));
+            //записываем данные в коллекцию хранящую пункты в листбокс
+            main_checkedListBox.Items.Add(str);
         }
-
-//поисковые дела
-        private void main_refresh_button_Click(object sender, EventArgs e)
-        {
-            OleDbConnection conn = new OleDbConnection();
-            //устанавливаем строку подключения для данного объекта-подключения
-            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=H:/db_congrat.accdb";
-            conn.Open();
-
-            OleDbCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT FrName FROM Friend WHERE (FrName ='" + minf1 + "') OR (Birthday='" + minf2 + "') OR (Job='" + minf3 + "') OR (Sex='" + minf4 + "')";
-
-            //cmd.CommandText = "SELECT FrName FROM Friend WHERE (FrName='Бродский')";
-
-            OleDbDataReader dr = cmd.ExecuteReader();
-            //метод Read() считывает данные строка за строкой
-            while (dr.Read())
-            {
-                //в данной строке мы выбираем данные хранящиеся в столбце мое_поле
-                string str = dr.GetString(dr.GetOrdinal("FrName"));
-                //записываем данные в коллекцию хранящую пункты в листбокс
-                main_checkedListBox.Items.Add(str);
-            }
-            //main_checkedListBox.Items.Add(minf1);
-            conn.Close(); 
-        }
+        //main_checkedListBox.Items.Add(minf1);
+        conn.Close();
+    }
 		
         private void dropData_button_Click(object sender, EventArgs e) //сбросить
         {
@@ -148,12 +153,28 @@ namespace WindowsFormsApplication1
 
         }
 
-        
+  
+
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Add form= new Form_Add();
-           // form.Location = new Point(200, 300);
+
+            OleDbConnection conn = new OleDbConnection();
+            //устанавливаем строку подключения для данного объекта-подключения
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
+            //создаем команду
+            //передаем sql-запрос команде
+            OleDbCommand add_cmd = new OleDbCommand("INSERT INTO Friend (FrName, Birthday, Sex, Job, [e-mail]) VALUES ('новый адресат', 'дд.мм.гггг', 'м', 'название отдела', 'адрес электронной почты')", conn);
+            //открываем подключение
+            conn.Open();
+            //выполняем команду и создаем объект чтения данных
+            add_cmd.ExecuteNonQuery();
+            //закрываем объект чтения данных и объект подключения
+            conn.Close();
+            string newFriend = "новый адресат";
+            Form_Change form = new Form_Change(newFriend);
+            //form.Location = new Point(200, 300);
             form.Show();
+
         }
 
         private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -204,10 +225,6 @@ namespace WindowsFormsApplication1
         {
 
         }
-
-        
-
-    
 
         
     }

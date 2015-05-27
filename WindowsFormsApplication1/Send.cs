@@ -61,7 +61,8 @@ namespace WindowsFormsApplication1
             }
             catch (Exception e)
             {
-                throw new Exception("Mail.Send: " + e.Message);
+                Err_Dial win = new Err_Dial(e);
+                win.Show();
             }
         }
 
