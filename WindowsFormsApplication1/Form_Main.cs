@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
 
 		    OleDbConnection conn = new OleDbConnection();
             //устанавливаем строку подключения для данного объекта-подключения
-            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=H:\db_congrat.accdb";
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
             //создаем команду
             //передаем sql-запрос команде
             OleDbCommand cmd = new OleDbCommand("SELECT HolName FROM Holiday WHERE HolDate='"+currentDate+"'",conn);
@@ -61,7 +61,7 @@ namespace WindowsFormsApplication1
 
 		   OleDbConnection conn = new OleDbConnection();
             //устанавливаем строку подключения для данного объекта-подключения
-            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=H:\db_congrat.accdb";
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
             //создаем команду
             OleDbCommand cmd = conn.CreateCommand();
 			//передаем sql-запрос команде
@@ -71,7 +71,10 @@ namespace WindowsFormsApplication1
     case "День рождения":
         cmd.CommandText="SELECT FrName FROM Friend WHERE Birthday LIKE '"+currentDate+"%'";
         break;
-    case "8 марта":
+    case "День Защитника Отечества":
+        cmd.CommandText = "SELECT FrName FROM Friend WHERE Sex='м'";
+        break;
+    case "Международный женский день":
         cmd.CommandText = "SELECT FrName FROM Friend WHERE Sex='ж'";
         break;
     default:
@@ -123,9 +126,24 @@ namespace WindowsFormsApplication1
 
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Add form= new Form_Add();
-           // form.Location = new Point(200, 300);
+
+            OleDbConnection conn = new OleDbConnection();
+            //устанавливаем строку подключения для данного объекта-подключения
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=db_congrat.accdb";
+            //создаем команду
+            //передаем sql-запрос команде
+            OleDbCommand add_cmd = new OleDbCommand("INSERT INTO Friend (FrName, Birthday, Sex, Job, [e-mail]) VALUES ('новый адресат', 'дд.мм.гггг', 'м', 'название отдела', 'адрес электронной почты')", conn);
+            //открываем подключение
+            conn.Open();
+            //выполняем команду и создаем объект чтения данных
+            add_cmd.ExecuteNonQuery();
+            //закрываем объект чтения данных и объект подключения
+            conn.Close();
+            string newFriend = "новый адресат";
+            Form_Change form = new Form_Change(newFriend);
+            //form.Location = new Point(200, 300);
             form.Show();
+
         }
 
         private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)

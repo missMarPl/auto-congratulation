@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
         {
 
             string[] lines = { textSmtp.Text, textPort.Text, textFrom.Text, textPass.Text };
-            System.IO.File.WriteAllLines(@"H:\mailset.txt", lines);
+            System.IO.File.WriteAllLines(@"mailset.txt", lines);
             Close();
         }
 

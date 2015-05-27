@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
 
                 public void GetSettings()
                 {
-                    System.IO.StreamReader file = new System.IO.StreamReader(@"H:\mailset.txt");
+                    System.IO.StreamReader file = new System.IO.StreamReader(@"mailset.txt");
                     i = 0;
                     while ((letter[i] = file.ReadLine()) != null)
                     {
@@ -53,7 +53,7 @@ namespace WindowsFormsApplication1
                 SmtpClient client = new SmtpClient();
                 client.Host = smtpServer;
                 client.Port = numPort;
-                client.EnableSsl = true;
+                client.EnableSsl = false;
                 client.Credentials = new NetworkCredential(from.Split('@')[0], password);
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 client.Send(mail);
@@ -62,8 +62,6 @@ namespace WindowsFormsApplication1
             catch (Exception e)
             {
                 throw new Exception("Mail.Send: " + e.Message);
-                Err_Dial ed = new Err_Dial();
-                ed.label1.Text = "Mail.Send: " + e.Message;
             }
         }
 
@@ -72,7 +70,7 @@ namespace WindowsFormsApplication1
             GetSettings();
             string[] message=new string[7];
             //берём из файла mailto, caption, message
-            System.IO.StreamReader file = new System.IO.StreamReader(@"H:\message.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(@"message.txt");
             i = 0;
             while ((message[i] = file.ReadLine()) != null)
             {
